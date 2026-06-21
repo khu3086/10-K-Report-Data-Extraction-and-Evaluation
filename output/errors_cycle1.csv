@@ -1,0 +1,45 @@
+ticker,field,key,predicted,truth,category
+AMZN,segment_revenue,north america,426305000000.0,426305.0,scale_x1e6
+AMZN,segment_revenue,international,161894000000.0,161894.0,scale_x1e6
+AMZN,segment_revenue,aws,128725000000.0,128725.0,scale_x1e6
+CAT,segment_revenue,construction industries,27000000000.0,25060000000.0,wrong_year_or_rounding
+CAT,segment_revenue,resource industries,13290000000.0,12474000000.0,wrong_year_or_rounding
+CAT,segment_revenue,power & energy,27343000000.0,32201000000.0,wrong_year_or_rounding
+CAT,segment_revenue,all other segment,46000000.0,,spurious_key
+KO,segment_revenue,emea,11513.0,11513000000.0,scale_x1e6
+KO,segment_revenue,latin america,6334.0,6334000000.0,scale_x1e6
+KO,segment_revenue,north america,19586.0,19586000000.0,scale_x1e6
+KO,segment_revenue,asia pacific,5638.0,5638000000.0,scale_x1e6
+KO,segment_revenue,bottling investments,5735.0,5735000000.0,scale_x1e6
+MSFT,segment_revenue,productivity and business processes,0.0,,spurious_key
+MSFT,segment_revenue,intelligent cloud,0.0,,spurious_key
+MSFT,segment_revenue,more personal computing,0.0,,spurious_key
+WMT,segment_revenue,walmart u.s,483000000000.0,483000000000000.0,scale_x1000
+WMT,segment_revenue,walmart international,130400000000.0,130400000000000.0,scale_x1000
+XOM,segment_revenue,energy products,55662000000.0,118497000000.0,wrong_value
+XOM,segment_revenue,chemical products,118497000000.0,14509000000.0,wrong_value
+XOM,segment_revenue,specialty products,173119000000.0,7655000000.0,wrong_value
+AAPL,geographic_revenue,united states,151790000000.0,,spurious_key
+AAPL,geographic_revenue,other countries,199994000000.0,,spurious_key
+GOOGL,geographic_revenue,united states,193363680000.0,48000000.0,wrong_value
+GOOGL,geographic_revenue,emea,116082440000.0,29000000.0,wrong_value
+GOOGL,geographic_revenue,asia pacific,68518612000.0,17000000.0,wrong_value
+GOOGL,geographic_revenue,other americas,24170168000.0,6000000.0,wrong_value
+JNJ,geographic_revenue,united states,3037000.0,,spurious_key
+JNJ,geographic_revenue,europe,5035000.0,,spurious_key
+JNJ,geographic_revenue,"western hemisphere, excluding u.s",1054000.0,,spurious_key
+JNJ,geographic_revenue,"africa, asia and pacific",1237000.0,,spurious_key
+MSFT,geographic_revenue,united states,0.0,,spurious_key
+MSFT,geographic_revenue,international,0.0,,spurious_key
+WMT,geographic_revenue,walmart u.s,77921000000.0,,spurious_key
+WMT,geographic_revenue,walmart international,27761900000.0,,spurious_key
+WMT,geographic_revenue,total company,105682900000.0,,spurious_key
+AAPL,geographic_revenue,americas,,178353000000.0,missing_key
+AAPL,geographic_revenue,europe,,111032000000.0,missing_key
+AAPL,geographic_revenue,japan,,28703000000.0,missing_key
+AAPL,geographic_revenue,rest of asia pacific,,33696000000.0,missing_key
+AMZN,rd_expense,value,0.0,,spurious_key
+JNJ,rd_expense,value,1250000000.0,14665000000.0,wrong_value
+KO,rd_expense,value,0.0,,spurious_key
+MSFT,rd_expense,value,0.0,32488000000.0,wrong_value
+WMT,rd_expense,value,0.0,,spurious_key

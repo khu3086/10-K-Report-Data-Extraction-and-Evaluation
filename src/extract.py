@@ -22,7 +22,7 @@ from typing import Dict, List
 
 import yaml
 
-from fields import FIELDS, CYCLE_HINTS, normalize_name
+from fields import FIELDS, CYCLE_HINTS, normalize_name, scale_factor
 from parse import parse_pdf
 from locate import locate
 from llm import extract_field
@@ -69,7 +69,11 @@ def run(cycle: int, reports_dir: str, out_dir: str, companies_path: str) -> str:
             result = extract_field(fld, region.context, cycle_hint)
             if result is None:
                 continue
-            unit = result.detected_scale
+            # Cycle 1 trusts the LLM's own unit conversion (the baseline error
+            # source). Cycle 2+ takes the value as printed and applies the scale
+            # deterministically in Python.
+            factor = scale_factor(result.detected_scale) if cycle >= 2 else 1.0
+            unit = "actual" if cycle >= 2 else result.detected_scale
             for item in result.items:
                 if item.value is None:  # model couldn't find this value
                     continue
@@ -79,7 +83,7 @@ def run(cycle: int, reports_dir: str, out_dir: str, companies_path: str) -> str:
                     "ticker": ticker,
                     "field": fld.key,
                     "key": key,
-                    "value": item.value,
+                    "value": item.value * factor,
                     "unit": unit,
                     "source_page": region.page_number,
                 })

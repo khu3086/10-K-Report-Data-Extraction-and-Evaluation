@@ -1,12 +1,41 @@
 company,ticker,field,key,value,unit,source_page
-# Fill in manually-verified values, one row per (ticker, field, key).
-# - value MUST be in ACTUAL DOLLARS (e.g. 383285000000, not "383,285").
-# - For rd_expense (scalar) use key "value".
-# - For segment_revenue / geographic_revenue use one row per segment/region,
-#   with key normalized the same way the extractor does (lowercase; see
-#   fields.normalize_name — e.g. "United States" -> "united states").
-# - source_page is optional but useful for auditing.
-# Example rows (replace with real, verified figures from the filings):
-# Apple Inc.,AAPL,rd_expense,value,29915000000,actual,
-# Apple Inc.,AAPL,geographic_revenue,americas,162560000000,actual,
-# Apple Inc.,AAPL,geographic_revenue,europe,94294000000,actual,
+# rd_expense = SEC XBRL (authoritative); segment/geographic = mistralai/mistral-small-24b-instruct-2501 (independent silver GT),,,,,,
+Apple Inc.,AAPL,rd_expense,value,34550000000.0,actual,
+Apple Inc.,AAPL,geographic_revenue,americas,178353000000.0,actual,50
+Apple Inc.,AAPL,geographic_revenue,europe,111032000000.0,actual,50
+Apple Inc.,AAPL,geographic_revenue,china,64377000000.0,actual,50
+Apple Inc.,AAPL,geographic_revenue,japan,28703000000.0,actual,50
+Apple Inc.,AAPL,geographic_revenue,rest of asia pacific,33696000000.0,actual,50
+Microsoft Corporation,MSFT,rd_expense,value,32488000000.0,actual,
+Alphabet Inc.,GOOGL,rd_expense,value,61087000000.0,actual,
+Alphabet Inc.,GOOGL,segment_revenue,google services,272543000000.0,actual,88
+Alphabet Inc.,GOOGL,segment_revenue,google cloud,33088000000.0,actual,88
+Alphabet Inc.,GOOGL,segment_revenue,other bets,1527000000.0,actual,88
+Alphabet Inc.,GOOGL,geographic_revenue,united states,48000000.0,actual,35
+Alphabet Inc.,GOOGL,geographic_revenue,emea,29000000.0,actual,35
+Alphabet Inc.,GOOGL,geographic_revenue,asia pacific,17000000.0,actual,35
+Alphabet Inc.,GOOGL,geographic_revenue,other americas,6000000.0,actual,35
+Amazon.com Inc.,AMZN,segment_revenue,north america,426305.0,actual,71
+Amazon.com Inc.,AMZN,segment_revenue,international,161894.0,actual,71
+Amazon.com Inc.,AMZN,segment_revenue,aws,128725.0,actual,71
+NVIDIA Corporation,NVDA,rd_expense,value,18497000000.0,actual,
+NVIDIA Corporation,NVDA,segment_revenue,compute & networking,193479000000.0,actual,40
+NVIDIA Corporation,NVDA,segment_revenue,graphics,22459000000.0,actual,40
+The Coca-Cola Company,KO,segment_revenue,emea,11513000000.0,actual,120
+The Coca-Cola Company,KO,segment_revenue,latin america,6334000000.0,actual,120
+The Coca-Cola Company,KO,segment_revenue,north america,19586000000.0,actual,120
+The Coca-Cola Company,KO,segment_revenue,asia pacific,5638000000.0,actual,120
+The Coca-Cola Company,KO,segment_revenue,bottling investments,5735000000.0,actual,120
+Johnson & Johnson,JNJ,rd_expense,value,14665000000.0,actual,
+Walmart Inc.,WMT,segment_revenue,walmart u.s,483000000000000.0,actual,6
+Walmart Inc.,WMT,segment_revenue,walmart international,130400000000000.0,actual,6
+Exxon Mobil Corporation,XOM,rd_expense,value,1200000000.0,actual,
+Exxon Mobil Corporation,XOM,segment_revenue,upstream,51489000000.0,actual,90
+Exxon Mobil Corporation,XOM,segment_revenue,energy products,118497000000.0,actual,90
+Exxon Mobil Corporation,XOM,segment_revenue,chemical products,14509000000.0,actual,90
+Exxon Mobil Corporation,XOM,segment_revenue,specialty products,7655000000.0,actual,90
+Caterpillar Inc.,CAT,rd_expense,value,2148000000.0,actual,
+Caterpillar Inc.,CAT,segment_revenue,construction industries,25060000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,resource industries,12474000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,power & energy,32201000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,financial products segment,4220000000.0,actual,124

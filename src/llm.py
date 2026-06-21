@@ -64,18 +64,41 @@ SYSTEM = (
 
 # The exact JSON shape we expect back (kept in the prompt so any OpenRouter
 # model — not just those supporting strict structured outputs — can comply).
+# Whether `value` is "as printed" or "actual dollars" is governed by the
+# cycle hint passed in (see fields.CYCLE_HINTS); detected_scale is always the
+# scale stated in the source table.
 JSON_SPEC = (
     'Respond ONLY with a JSON object of this exact shape:\n'
     '{\n'
     '  "detected_scale": "millions" | "thousands" | "units",\n'
     '  "items": [ { "key": "<segment/region name, or \\"value\\" for a scalar>", '
-    '"value": <number in ACTUAL US DOLLARS> } ]\n'
+    '"value": <number> } ]\n'
     '}'
 )
 
 
-def extract_field(field: Field, context: str, cycle_hint: str) -> Optional[Extraction]:
-    """Call the LLM to extract `field` from `context`. Returns None on failure."""
+def _clean_json(raw: str) -> str:
+    """Strip markdown fences / prose so json.loads sees a bare object.
+
+    Some models wrap JSON in ```json fences or add a sentence; we keep the
+    substring from the first '{' to the last '}'.
+    """
+    s = raw.strip()
+    if s.startswith("```"):
+        s = s.split("```", 2)[1]
+        if s.lstrip().lower().startswith("json"):
+            s = s.lstrip()[4:]
+    i, j = s.find("{"), s.rfind("}")
+    return s[i:j + 1] if (i != -1 and j != -1 and j > i) else s
+
+
+def extract_field(field: Field, context: str, cycle_hint: str,
+                  model: Optional[str] = None) -> Optional[Extraction]:
+    """Call the LLM to extract `field` from `context`. Returns None on failure.
+
+    `model` overrides the default model (used by the ground-truth builder to run
+    a stronger, independent model than the system under test).
+    """
     shape = ("one value per segment/region" if field.shape == "keyed"
              else "a single scalar value (key = 'value')")
     user = (
@@ -88,17 +111,17 @@ def extract_field(field: Field, context: str, cycle_hint: str) -> Optional[Extra
     )
     try:
         resp = _get_client().chat.completions.create(
-            model=MODEL,
+            model=model or MODEL,
             messages=[
                 {"role": "system", "content": SYSTEM},
                 {"role": "user", "content": user},
             ],
             response_format={"type": "json_object"},
             temperature=0,
-            max_tokens=4096,
+            max_tokens=2000,
         )
         raw = resp.choices[0].message.content or "{}"
-        return Extraction.model_validate(json.loads(raw))
+        return Extraction.model_validate(json.loads(_clean_json(raw)))
     except Exception as e:  # network / parse / validation errors
         print(f"  [llm] extraction failed for {field.key}: {e}")
         return None

@@ -1,54 +1,54 @@
 company,ticker,field,key,value,unit,source_page
-Apple Inc.,AAPL,geographic_revenue,united states,151790.0,millions,50
-Apple Inc.,AAPL,geographic_revenue,china,64377.0,millions,50
-Apple Inc.,AAPL,geographic_revenue,other countries,199994.0,millions,50
-Apple Inc.,AAPL,rd_expense,value,34550.0,millions,50
-Amazon.com Inc.,AMZN,segment_revenue,north america,426305.0,millions,71
-Amazon.com Inc.,AMZN,segment_revenue,international,161894.0,millions,71
-Amazon.com Inc.,AMZN,segment_revenue,aws,128725.0,millions,71
-Amazon.com Inc.,AMZN,geographic_revenue,united states,469000.0,millions,7
-Amazon.com Inc.,AMZN,geographic_revenue,international,104000.0,millions,7
+Apple Inc.,AAPL,geographic_revenue,united states,151790000000.0,millions,50
+Apple Inc.,AAPL,geographic_revenue,china,64377000000.0,millions,50
+Apple Inc.,AAPL,geographic_revenue,other countries,199994000000.0,millions,50
+Apple Inc.,AAPL,rd_expense,value,34550000000.0,millions,50
+Amazon.com Inc.,AMZN,segment_revenue,north america,426305000000.0,millions,71
+Amazon.com Inc.,AMZN,segment_revenue,international,161894000000.0,millions,71
+Amazon.com Inc.,AMZN,segment_revenue,aws,128725000000.0,millions,71
 Amazon.com Inc.,AMZN,rd_expense,value,0.0,millions,60
-Caterpillar Inc.,CAT,segment_revenue,construction industries,24800.0,millions,124
-Caterpillar Inc.,CAT,segment_revenue,resource industries,12185.0,millions,124
-Caterpillar Inc.,CAT,segment_revenue,power & energy,27143.0,millions,124
-Caterpillar Inc.,CAT,segment_revenue,financial products segment,4220.0,millions,124
-Caterpillar Inc.,CAT,segment_revenue,all other segment,46.0,millions,124
-Caterpillar Inc.,CAT,geographic_revenue,united states,12300.0,millions,40
-Caterpillar Inc.,CAT,geographic_revenue,eame,8000.0,millions,40
-Caterpillar Inc.,CAT,geographic_revenue,latin america,4000.0,millions,40
-Caterpillar Inc.,CAT,geographic_revenue,asia pacific,6000.0,millions,40
-Caterpillar Inc.,CAT,rd_expense,value,2148.0,millions,54
-Alphabet Inc.,GOOGL,segment_revenue,google services,272543.0,millions,88
-Alphabet Inc.,GOOGL,segment_revenue,google cloud,33088.0,millions,88
-Alphabet Inc.,GOOGL,segment_revenue,other bets,1527.0,millions,88
-Alphabet Inc.,GOOGL,rd_expense,value,61087.0,millions,36
-Johnson & Johnson,JNJ,geographic_revenue,united states,3037.0,thousands,26
-Johnson & Johnson,JNJ,geographic_revenue,europe,5035.0,thousands,26
-Johnson & Johnson,JNJ,geographic_revenue,"western hemisphere, excluding u.s",1054.0,thousands,26
-Johnson & Johnson,JNJ,geographic_revenue,"africa, asia and pacific",1237.0,thousands,26
-Johnson & Johnson,JNJ,rd_expense,value,1250.0,millions,61
-The Coca-Cola Company,KO,segment_revenue,emea,513.0,millions,120
-The Coca-Cola Company,KO,segment_revenue,latin america,334.0,millions,120
-The Coca-Cola Company,KO,segment_revenue,north america,586.0,millions,120
-The Coca-Cola Company,KO,segment_revenue,asia pacific,638.0,millions,120
-The Coca-Cola Company,KO,segment_revenue,bottling investments,735.0,millions,120
-The Coca-Cola Company,KO,rd_expense,value,0.0,millions,26
+Caterpillar Inc.,CAT,segment_revenue,construction industries,27000000000.0,millions,124
+Caterpillar Inc.,CAT,segment_revenue,resource industries,13290000000.0,millions,124
+Caterpillar Inc.,CAT,segment_revenue,power & energy,27343000000.0,millions,124
+Caterpillar Inc.,CAT,segment_revenue,financial products segment,4220000000.0,millions,124
+Caterpillar Inc.,CAT,segment_revenue,all other segment,46000000.0,millions,124
+Caterpillar Inc.,CAT,rd_expense,value,2148000000.0,millions,54
+Alphabet Inc.,GOOGL,segment_revenue,google services,272543000000.0,millions,88
+Alphabet Inc.,GOOGL,segment_revenue,google cloud,33088000000.0,millions,88
+Alphabet Inc.,GOOGL,segment_revenue,other bets,1527000000.0,millions,88
+Alphabet Inc.,GOOGL,geographic_revenue,united states,193363680000.0,millions,35
+Alphabet Inc.,GOOGL,geographic_revenue,emea,116082440000.0,millions,35
+Alphabet Inc.,GOOGL,geographic_revenue,asia pacific,68518612000.0,millions,35
+Alphabet Inc.,GOOGL,geographic_revenue,other americas,24170168000.0,millions,35
+Alphabet Inc.,GOOGL,rd_expense,value,61087000000.0,millions,36
+Johnson & Johnson,JNJ,geographic_revenue,united states,3037000.0,thousands,26
+Johnson & Johnson,JNJ,geographic_revenue,europe,5035000.0,thousands,26
+Johnson & Johnson,JNJ,geographic_revenue,"western hemisphere, excluding u.s",1054000.0,thousands,26
+Johnson & Johnson,JNJ,geographic_revenue,"africa, asia and pacific",1237000.0,thousands,26
+Johnson & Johnson,JNJ,rd_expense,value,1250000000.0,millions,61
+The Coca-Cola Company,KO,segment_revenue,emea,11513.0,millions,120
+The Coca-Cola Company,KO,segment_revenue,latin america,6334.0,millions,120
+The Coca-Cola Company,KO,segment_revenue,north america,19586.0,millions,120
+The Coca-Cola Company,KO,segment_revenue,asia pacific,5638.0,millions,120
+The Coca-Cola Company,KO,segment_revenue,bottling investments,5735.0,millions,120
+The Coca-Cola Company,KO,rd_expense,value,0.0,units,26
 Microsoft Corporation,MSFT,segment_revenue,productivity and business processes,0.0,millions,5
 Microsoft Corporation,MSFT,segment_revenue,intelligent cloud,0.0,millions,5
 Microsoft Corporation,MSFT,segment_revenue,more personal computing,0.0,millions,5
-Microsoft Corporation,MSFT,geographic_revenue,united states,125000.0,millions,10
-Microsoft Corporation,MSFT,geographic_revenue,international,103000.0,millions,10
-Microsoft Corporation,MSFT,rd_expense,value,0.0,millions,58
-NVIDIA Corporation,NVDA,segment_revenue,compute & networking,193479.0,millions,40
-NVIDIA Corporation,NVDA,segment_revenue,graphics,22459.0,millions,40
-NVIDIA Corporation,NVDA,rd_expense,value,18497.0,millions,41
-Walmart Inc.,WMT,segment_revenue,walmart u.s,483.0,billions,6
-Walmart Inc.,WMT,segment_revenue,walmart international,130.4,billions,6
-Walmart Inc.,WMT,geographic_revenue,walmart u.s,779210.0,millions,29
-Walmart Inc.,WMT,geographic_revenue,walmart international,277619.0,millions,29
-Exxon Mobil Corporation,XOM,segment_revenue,upstream,12.0,millions,90
-Exxon Mobil Corporation,XOM,segment_revenue,energy products,145.0,millions,90
-Exxon Mobil Corporation,XOM,segment_revenue,chemical products,14.0,millions,90
-Exxon Mobil Corporation,XOM,segment_revenue,specialty products,12.0,millions,90
-Exxon Mobil Corporation,XOM,rd_expense,value,1200.0,millions,115
+Microsoft Corporation,MSFT,geographic_revenue,united states,0.0,millions,10
+Microsoft Corporation,MSFT,geographic_revenue,international,0.0,millions,10
+Microsoft Corporation,MSFT,rd_expense,value,0.0,units,58
+NVIDIA Corporation,NVDA,segment_revenue,compute & networking,193479000000.0,millions,40
+NVIDIA Corporation,NVDA,segment_revenue,graphics,22459000000.0,millions,40
+NVIDIA Corporation,NVDA,rd_expense,value,18497000000.0,millions,41
+Walmart Inc.,WMT,segment_revenue,walmart u.s,483000000000.0,millions,6
+Walmart Inc.,WMT,segment_revenue,walmart international,130400000000.0,millions,6
+Walmart Inc.,WMT,geographic_revenue,walmart u.s,77921000000.0,millions,29
+Walmart Inc.,WMT,geographic_revenue,walmart international,27761900000.0,millions,29
+Walmart Inc.,WMT,geographic_revenue,total company,105682900000.0,millions,29
+Walmart Inc.,WMT,rd_expense,value,0.0,millions,71
+Exxon Mobil Corporation,XOM,segment_revenue,upstream,51489000000.0,millions,90
+Exxon Mobil Corporation,XOM,segment_revenue,energy products,55662000000.0,millions,90
+Exxon Mobil Corporation,XOM,segment_revenue,chemical products,118497000000.0,millions,90
+Exxon Mobil Corporation,XOM,segment_revenue,specialty products,173119000000.0,millions,90
+Exxon Mobil Corporation,XOM,rd_expense,value,1200000000.0,millions,115

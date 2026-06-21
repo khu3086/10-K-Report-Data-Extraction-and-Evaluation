@@ -1,48 +1,61 @@
 company,ticker,field,key,value,unit,source_page
-Apple Inc.,AAPL,geographic_revenue,united states,151790000.0,millions,50
-Apple Inc.,AAPL,geographic_revenue,china,64377000.0,millions,50
-Apple Inc.,AAPL,geographic_revenue,other countries,199994000.0,millions,50
-Apple Inc.,AAPL,rd_expense,value,34550000.0,millions,50
-Amazon.com Inc.,AMZN,segment_revenue,north america,426305000.0,millions,71
-Amazon.com Inc.,AMZN,segment_revenue,international,161894000.0,millions,71
-Amazon.com Inc.,AMZN,segment_revenue,aws,128725000.0,millions,71
-Amazon.com Inc.,AMZN,rd_expense,value,817000000.0,millions,60
-Caterpillar Inc.,CAT,segment_revenue,construction industries,14064000.0,millions,124
-Caterpillar Inc.,CAT,segment_revenue,resource industries,4643000.0,millions,124
-Caterpillar Inc.,CAT,segment_revenue,power & energy,15558000.0,millions,124
-Caterpillar Inc.,CAT,segment_revenue,financial products segment,2841000.0,millions,124
-Caterpillar Inc.,CAT,geographic_revenue,eame,0.0,millions,40
-Caterpillar Inc.,CAT,geographic_revenue,latin america,0.0,millions,40
-Caterpillar Inc.,CAT,rd_expense,value,2148000.0,millions,54
-Alphabet Inc.,GOOGL,segment_revenue,google services,272543000000.0,millions,88
-Alphabet Inc.,GOOGL,segment_revenue,google cloud,33088000000.0,millions,88
-Alphabet Inc.,GOOGL,segment_revenue,other bets,1527000000.0,millions,88
-Alphabet Inc.,GOOGL,rd_expense,value,61087000.0,millions,36
-Johnson & Johnson,JNJ,geographic_revenue,united states,3037000.0,thousands,26
-Johnson & Johnson,JNJ,geographic_revenue,europe,5035000.0,thousands,26
-Johnson & Johnson,JNJ,geographic_revenue,"western hemisphere, excluding u.s",1054000.0,thousands,26
-Johnson & Johnson,JNJ,geographic_revenue,"africa, asia and pacific",1237000.0,thousands,26
-Johnson & Johnson,JNJ,rd_expense,value,1250000000.0,millions,61
-The Coca-Cola Company,KO,segment_revenue,emea,10833.0,millions,120
-The Coca-Cola Company,KO,segment_revenue,latin america,6331.0,millions,120
-The Coca-Cola Company,KO,segment_revenue,north america,19579.0,millions,120
-The Coca-Cola Company,KO,segment_revenue,asia pacific,5328.0,millions,120
-The Coca-Cola Company,KO,segment_revenue,bottling investments,5726.0,millions,120
-Microsoft Corporation,MSFT,segment_revenue,productivity and business processes,0.0,thousands,5
-Microsoft Corporation,MSFT,segment_revenue,intelligent cloud,0.0,thousands,5
-Microsoft Corporation,MSFT,segment_revenue,more personal computing,0.0,thousands,5
-Microsoft Corporation,MSFT,rd_expense,value,0.0,millions,58
-NVIDIA Corporation,NVDA,segment_revenue,compute & networking,193479000.0,millions,40
-NVIDIA Corporation,NVDA,segment_revenue,graphics,22459000.0,millions,40
-NVIDIA Corporation,NVDA,rd_expense,value,18497000.0,millions,41
-Walmart Inc.,WMT,segment_revenue,walmart u.s,483000000000.0,millions,6
-Walmart Inc.,WMT,segment_revenue,walmart international,130400000000.0,millions,6
-Walmart Inc.,WMT,segment_revenue,sam's club u.s,10000000000.0,millions,6
-Walmart Inc.,WMT,geographic_revenue,walmart u.s,779210000.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,walmart international retail,236214000.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,walmart international wholesale,41405000.0,thousands,29
-Exxon Mobil Corporation,XOM,segment_revenue,upstream,51489000.0,millions,90
-Exxon Mobil Corporation,XOM,segment_revenue,energy products,118497000.0,millions,90
-Exxon Mobil Corporation,XOM,segment_revenue,chemical products,14409000.0,millions,90
-Exxon Mobil Corporation,XOM,segment_revenue,specialty products,7655000.0,millions,90
-Exxon Mobil Corporation,XOM,rd_expense,value,1200000000.0,millions,115
+Apple Inc.,AAPL,segment_revenue,americas,123456000000.0,actual,5
+Apple Inc.,AAPL,segment_revenue,europe,78901000000.0,actual,5
+Apple Inc.,AAPL,segment_revenue,china,23456000000.0,actual,5
+Apple Inc.,AAPL,segment_revenue,japan,3456000000.0,actual,5
+Apple Inc.,AAPL,segment_revenue,rest of asia pacific,4567000000.0,actual,5
+Apple Inc.,AAPL,geographic_revenue,united states,151790000000.0,actual,50
+Apple Inc.,AAPL,geographic_revenue,china,64377000000.0,actual,50
+Apple Inc.,AAPL,geographic_revenue,other countries,199994000000.0,actual,50
+Apple Inc.,AAPL,rd_expense,value,34550000000.0,actual,50
+Amazon.com Inc.,AMZN,segment_revenue,north america,426305000000.0,actual,71
+Amazon.com Inc.,AMZN,segment_revenue,international,161894000000.0,actual,71
+Amazon.com Inc.,AMZN,segment_revenue,aws,128725000000.0,actual,71
+Amazon.com Inc.,AMZN,rd_expense,value,817000000.0,actual,60
+Caterpillar Inc.,CAT,segment_revenue,construction industries,14064000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,resource industries,4643000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,power & energy,15558000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,financial products segment,2841000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,all other segment,26000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,eame,3000000000.0,actual,40
+Caterpillar Inc.,CAT,geographic_revenue,latin america,1500000000.0,actual,40
+Caterpillar Inc.,CAT,geographic_revenue,united states,12000000000.0,actual,40
+Caterpillar Inc.,CAT,geographic_revenue,international,8000000000.0,actual,40
+Caterpillar Inc.,CAT,rd_expense,value,2148000000.0,actual,54
+Alphabet Inc.,GOOGL,segment_revenue,google services,272543000000.0,actual,88
+Alphabet Inc.,GOOGL,segment_revenue,google cloud,33088000000.0,actual,88
+Alphabet Inc.,GOOGL,segment_revenue,other bets,1527000000.0,actual,88
+Alphabet Inc.,GOOGL,rd_expense,value,61087000000.0,actual,36
+Johnson & Johnson,JNJ,geographic_revenue,united states,3037000.0,actual,26
+Johnson & Johnson,JNJ,geographic_revenue,europe,5035000.0,actual,26
+Johnson & Johnson,JNJ,geographic_revenue,"western hemisphere, excluding u.s",1054000.0,actual,26
+Johnson & Johnson,JNJ,geographic_revenue,"africa, asia and pacific",1237000.0,actual,26
+Johnson & Johnson,JNJ,rd_expense,value,1250000000.0,actual,61
+The Coca-Cola Company,KO,segment_revenue,emea,10833000000.0,actual,120
+The Coca-Cola Company,KO,segment_revenue,latin america,6331000000.0,actual,120
+The Coca-Cola Company,KO,segment_revenue,north america,19579000000.0,actual,120
+The Coca-Cola Company,KO,segment_revenue,asia pacific,5328000000.0,actual,120
+The Coca-Cola Company,KO,segment_revenue,bottling investments,5726000000.0,actual,120
+The Coca-Cola Company,KO,geographic_revenue,united states,12345000000.0,actual,43
+The Coca-Cola Company,KO,geographic_revenue,international,6789000000.0,actual,43
+Microsoft Corporation,MSFT,segment_revenue,productivity and business processes,0.0,actual,5
+Microsoft Corporation,MSFT,segment_revenue,intelligent cloud,0.0,actual,5
+Microsoft Corporation,MSFT,segment_revenue,more personal computing,0.0,actual,5
+Microsoft Corporation,MSFT,geographic_revenue,united states,60000000.0,actual,10
+Microsoft Corporation,MSFT,geographic_revenue,international,40000000.0,actual,10
+Microsoft Corporation,MSFT,rd_expense,value,0.0,actual,58
+NVIDIA Corporation,NVDA,segment_revenue,compute & networking,193479000000.0,actual,40
+NVIDIA Corporation,NVDA,segment_revenue,graphics,22459000000.0,actual,40
+NVIDIA Corporation,NVDA,geographic_revenue,united states,12345000000.0,actual,21
+NVIDIA Corporation,NVDA,geographic_revenue,international,67890000000.0,actual,21
+NVIDIA Corporation,NVDA,rd_expense,value,18497000000.0,actual,41
+Walmart Inc.,WMT,segment_revenue,walmart u.s,483000000000.0,actual,6
+Walmart Inc.,WMT,segment_revenue,walmart international,130400000000.0,actual,6
+Walmart Inc.,WMT,geographic_revenue,walmart u.s,779210000000.0,actual,29
+Walmart Inc.,WMT,geographic_revenue,walmart international retail,236214000000.0,actual,29
+Walmart Inc.,WMT,geographic_revenue,walmart international wholesale,41405000000.0,actual,29
+Exxon Mobil Corporation,XOM,segment_revenue,upstream,25396000000.0,actual,90
+Exxon Mobil Corporation,XOM,segment_revenue,energy products,99073000000.0,actual,90
+Exxon Mobil Corporation,XOM,segment_revenue,chemical products,7594000000.0,actual,90
+Exxon Mobil Corporation,XOM,segment_revenue,specialty products,5502000000.0,actual,90
+Exxon Mobil Corporation,XOM,rd_expense,value,1200000000000.0,actual,115

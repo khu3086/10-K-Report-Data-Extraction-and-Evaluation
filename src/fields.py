@@ -11,7 +11,7 @@ error categories (scale detection, current-vs-prior-year column, segment-name
 normalization, geographic-note location).
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Dict, List
 
 
@@ -88,27 +88,48 @@ FIELDS_BY_KEY: Dict[str, Field] = {f.key: f for f in FIELDS}
 # Cycle 2: targeted fixes derived from error analysis of cycle 1.
 
 CYCLE_HINTS: Dict[int, str] = {
+    # Cycle 1 (baseline): the LLM is asked to do the unit conversion itself.
+    # This is where the interesting errors come from — models are unreliable at
+    # the arithmetic (off by 1000x) and at picking the current-year column.
     1: (
-        "Extract the requested values from the provided 10-K excerpt. "
-        "Report numbers as they appear."
+        "Extract the requested values from the provided 10-K excerpt.\n"
+        "Convert every value to ACTUAL US DOLLARS using the table's stated scale "
+        "(e.g. '$34,550' under a header 'in millions' -> 34550000000)."
     ),
+    # Cycle 2 (refined): error analysis of cycle 1 showed scale-arithmetic and
+    # prior-year-column errors dominate. Fix: the LLM returns the number EXACTLY
+    # as printed plus the detected scale, and the pipeline applies the multiplier
+    # deterministically in Python (see extract.py). The prompt now only handles
+    # selection (current year, exclude totals, exact names).
     2: (
-        "Extract the requested values from the provided 10-K excerpt. Follow "
-        "these rules precisely:\n"
-        "1. SCALE: detect the table's scale from its header (e.g. 'in millions', "
-        "'in thousands') and return every value in ACTUAL DOLLARS "
-        "(e.g. '$1,234 million' -> 1234000000).\n"
-        "2. FISCAL YEAR: 10-K tables show multiple years side by side. Return "
-        "ONLY the most recent fiscal year (the leftmost / current-year column). "
-        "Never mix a prior-year figure in.\n"
-        "3. SEGMENT/REGION NAMES: use the exact label from the filing, trimmed of "
-        "footnote markers and trailing punctuation.\n"
-        "4. TOTALS: do NOT include 'Total', 'Consolidated', 'Corporate/Other', or "
-        "elimination/reconciliation rows as a segment or region entry.\n"
-        "5. If a value is genuinely not present in the excerpt, omit it rather "
-        "than guessing."
+        "Extract the requested values from the provided 10-K excerpt. Rules:\n"
+        "1. Return each value EXACTLY as printed in the table — do NOT convert "
+        "units (e.g. print '34,550' as 34550). Report the table's scale in "
+        "'detected_scale'.\n"
+        "2. FISCAL YEAR: tables show multiple years side by side. Use ONLY the "
+        "most recent fiscal year (the leftmost / current-year column).\n"
+        "3. NAMES: use the exact segment/region label, trimmed of footnote marks.\n"
+        "4. TOTALS: never include 'Total', 'Consolidated', 'Corporate/Other', or "
+        "elimination/reconciliation rows.\n"
+        "5. Omit any value not present in the excerpt rather than guessing."
     ),
 }
+
+
+# --- Scale handling (deterministic, used by the cycle-2 pipeline) ---------------
+
+SCALE_FACTORS: Dict[str, float] = {
+    "units": 1.0,
+    "ones": 1.0,
+    "thousands": 1_000.0,
+    "millions": 1_000_000.0,
+    "billions": 1_000_000_000.0,
+}
+
+
+def scale_factor(detected_scale: str) -> float:
+    """Map a detected scale label to a multiplier (defaults to 1.0)."""
+    return SCALE_FACTORS.get((detected_scale or "units").strip().lower(), 1.0)
 
 
 # --- Segment / region name normalization (used by both extractor and evaluator) -

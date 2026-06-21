@@ -1,0 +1,61 @@
+{
+  "cycle": 2,
+  "tolerance": 0.005,
+  "overall": {
+    "precision": 0.2167,
+    "recall": 0.3333,
+    "f1": 0.2626,
+    "tp": 13,
+    "fp": 47,
+    "fn": 26
+  },
+  "per_field": {
+    "segment_revenue": {
+      "shape": "keyed",
+      "truth_cells": 23,
+      "predicted_cells": 32,
+      "tp": 8,
+      "fp": 24,
+      "fn": 15,
+      "precision": 0.25,
+      "recall": 0.3478,
+      "f1": 0.2909,
+      "accuracy": null,
+      "value_mape": 0.0003
+    },
+    "geographic_revenue": {
+      "shape": "keyed",
+      "truth_cells": 9,
+      "predicted_cells": 20,
+      "tp": 1,
+      "fp": 19,
+      "fn": 8,
+      "precision": 0.05,
+      "recall": 0.1111,
+      "f1": 0.069,
+      "accuracy": null,
+      "value_mape": 0.0
+    },
+    "rd_expense": {
+      "shape": "scalar",
+      "truth_cells": 7,
+      "predicted_cells": 8,
+      "tp": 4,
+      "fp": 4,
+      "fn": 3,
+      "precision": 0.5,
+      "recall": 0.5714,
+      "f1": 0.5333,
+      "accuracy": 0.5714,
+      "value_mape": 0.0
+    }
+  },
+  "error_categories": {
+    "spurious_key": 29,
+    "missing_key": 8,
+    "wrong_value": 7,
+    "wrong_year_or_rounding": 5,
+    "scale_x1e6": 3,
+    "scale_x1000": 3
+  }
+}
