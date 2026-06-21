@@ -5,6 +5,16 @@ fields from public-company 10-K reports (PDF), evaluates them against an
 **automatically-built, independent** ground truth, and demonstrates a clean
 cycle-1 → cycle-2 improvement. Includes a Streamlit dashboard.
 
+## Live dashboard
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=khu3086/10-K-Report-Data-Extraction-and-Evaluation&branch=main&mainModule=dashboard/app.py)
+
+One-click deploy on [Streamlit Community Cloud](https://share.streamlit.io): sign
+in with GitHub, point it at this repo (`main` branch, main file
+`dashboard/app.py`), and Deploy. The dashboard reads the committed `output/`
+metrics, so no API key is needed to view it. Resulting URL looks like
+`https://<your-subdomain>.streamlit.app`.
+
 ## Results
 
 Ground truth is built automatically (no manual entry): **R&D from SEC XBRL**
