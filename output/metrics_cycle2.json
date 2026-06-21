@@ -2,37 +2,37 @@
   "cycle": 2,
   "tolerance": 0.005,
   "overall": {
-    "precision": 0.2632,
+    "precision": 0.2747,
     "recall": 0.5952,
-    "f1": 0.365,
+    "f1": 0.3759,
     "tp": 25,
-    "fp": 70,
+    "fp": 66,
     "fn": 17
   },
   "per_field": {
     "segment_revenue": {
       "shape": "keyed",
       "truth_cells": 19,
-      "predicted_cells": 39,
+      "predicted_cells": 37,
       "tp": 11,
-      "fp": 28,
+      "fp": 26,
       "fn": 8,
-      "precision": 0.2821,
+      "precision": 0.2973,
       "recall": 0.5789,
-      "f1": 0.3793,
+      "f1": 0.3929,
       "accuracy": null,
       "value_mape": 0.0
     },
     "geographic_revenue": {
       "shape": "keyed",
       "truth_cells": 16,
-      "predicted_cells": 48,
+      "predicted_cells": 46,
       "tp": 9,
-      "fp": 39,
+      "fp": 37,
       "fn": 7,
-      "precision": 0.1875,
+      "precision": 0.1957,
       "recall": 0.5625,
-      "f1": 0.2812,
+      "f1": 0.2903,
       "accuracy": null,
       "value_mape": 0.0
     },
@@ -51,7 +51,7 @@
     }
   },
   "error_categories": {
-    "spurious_key": 54,
+    "spurious_key": 50,
     "wrong_year_or_rounding": 20,
     "wrong_value": 12,
     "missing_key": 1

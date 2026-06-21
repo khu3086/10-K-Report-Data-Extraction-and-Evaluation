@@ -18,19 +18,17 @@ GOOGL,segment_revenue,google services,272543000000.0,342721000000.0,wrong_year_o
 GOOGL,segment_revenue,other bets,1527000000.0,1537000000.0,wrong_value
 JNJ,segment_revenue,innovative medicine,5245000.0,,spurious_key
 JNJ,segment_revenue,medtech,5118000.0,,spurious_key
-KO,segment_revenue,asia pacific,47941000000000.0,,spurious_key
-KO,segment_revenue,bottling investments,47941000000000.0,,spurious_key
-KO,segment_revenue,emea,47941000000000.0,,spurious_key
-KO,segment_revenue,latin america,47941000000000.0,,spurious_key
-KO,segment_revenue,north america,47941000000000.0,,spurious_key
-KO,segment_revenue,worldwide,47941000000000.0,,spurious_key
+KO,segment_revenue,asia pacific,14310000000.0,,spurious_key
+KO,segment_revenue,bottling investments,10310000000.0,,spurious_key
+KO,segment_revenue,emea,43550000000.0,,spurious_key
+KO,segment_revenue,latin america,24460000000.0,,spurious_key
+KO,segment_revenue,north america,23160000000.0,,spurious_key
 MSFT,segment_revenue,basic (a/b,13700000.0,,spurious_key
 MSFT,segment_revenue,dilutive effect of stock-based awards,32000000.0,,spurious_key
 MSFT,segment_revenue,interest and dividends income,2647000000.0,,spurious_key
 MSFT,segment_revenue,net gains (losses) on foreign currency remeasurements,171000000.0,,spurious_key
 MSFT,segment_revenue,net income available for common shareholders (a,101832000000.0,,spurious_key
 MSFT,segment_revenue,net recognized gains (losses) on investments,-349000000.0,,spurious_key
-WMT,segment_revenue,sam's club u.s,93800000000.0,,spurious_key
 XOM,segment_revenue,chemical products,173119000000.0,,spurious_key
 XOM,segment_revenue,energy products,452209000000.0,,spurious_key
 XOM,segment_revenue,specialty products,118497000000.0,,spurious_key
@@ -70,11 +68,9 @@ KO,geographic_revenue,other,342000000.0,,spurious_key
 KO,geographic_revenue,"property, plant and equipment — cost",18732000000.0,,spurious_key
 KO,geographic_revenue,"property, plant and equipment — net",9613000000.0,,spurious_key
 KO,geographic_revenue,raw materials and packaging,2708000000.0,,spurious_key
-WMT,geographic_revenue,international distribution facilities,179000.0,,spurious_key
-WMT,geographic_revenue,sam's club u.s. retail units,464000.0,,spurious_key
-WMT,geographic_revenue,u.s. distribution facilities,192000.0,,spurious_key
-WMT,geographic_revenue,walmart international retail units,1486000.0,,spurious_key
-WMT,geographic_revenue,walmart u.s. retail units,3728000.0,,spurious_key
+WMT,geographic_revenue,sam's club u.s,80502000.0,,spurious_key
+WMT,geographic_revenue,walmart international,277619000.0,,spurious_key
+WMT,geographic_revenue,walmart u.s,698708000.0,,spurious_key
 XOM,geographic_revenue,africa,0.0,,spurious_key
 XOM,geographic_revenue,asia,163000000.0,,spurious_key
 XOM,geographic_revenue,australia/oceania,28000000.0,,spurious_key

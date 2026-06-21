@@ -63,12 +63,11 @@ The Coca-Cola Company,KO,geographic_revenue,"property, plant and equipment — c
 The Coca-Cola Company,KO,geographic_revenue,"property, plant and equipment — net",9613.0,millions,73
 The Coca-Cola Company,KO,geographic_revenue,raw materials and packaging,2708.0,millions,73
 The Coca-Cola Company,KO,geographic_revenue,total inventories,4425.0,millions,73
-The Coca-Cola Company,KO,segment_revenue,asia pacific,47941000.0,millions,48
-The Coca-Cola Company,KO,segment_revenue,bottling investments,47941000.0,millions,48
-The Coca-Cola Company,KO,segment_revenue,emea,47941000.0,millions,48
-The Coca-Cola Company,KO,segment_revenue,latin america,47941000.0,millions,48
-The Coca-Cola Company,KO,segment_revenue,north america,47941000.0,millions,48
-The Coca-Cola Company,KO,segment_revenue,worldwide,47941000.0,millions,48
+The Coca-Cola Company,KO,segment_revenue,asia pacific,14310.0,millions,48
+The Coca-Cola Company,KO,segment_revenue,bottling investments,10310.0,millions,48
+The Coca-Cola Company,KO,segment_revenue,emea,43550.0,millions,48
+The Coca-Cola Company,KO,segment_revenue,latin america,24460.0,millions,48
+The Coca-Cola Company,KO,segment_revenue,north america,23160.0,millions,48
 Microsoft Corporation,MSFT,geographic_revenue,other countries,137178.0,millions,84
 Microsoft Corporation,MSFT,geographic_revenue,total,281724.0,millions,84
 Microsoft Corporation,MSFT,geographic_revenue,united states,144546.0,millions,84
@@ -88,19 +87,10 @@ NVIDIA Corporation,NVDA,rd_expense,value,18497.0,millions,41
 NVIDIA Corporation,NVDA,segment_revenue,compute & networking,193479.0,millions,40
 NVIDIA Corporation,NVDA,segment_revenue,graphics,22459.0,millions,40
 NVIDIA Corporation,NVDA,segment_revenue,total,215938.0,millions,40
-Walmart Inc.,WMT,geographic_revenue,international distribution facilities,179.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,sam's club u.s. retail units,464.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,sam's club u.s. total,601.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,total company,10955.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,total distribution facilities,371.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,total retail units,5678.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,u.s. distribution facilities,192.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,walmart international retail units,1486.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,walmart international total,5743.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,walmart u.s. retail units,3728.0,thousands,29
-Walmart Inc.,WMT,geographic_revenue,walmart u.s. total,4611.0,thousands,29
+Walmart Inc.,WMT,geographic_revenue,sam's club u.s,80502.0,thousands,29
+Walmart Inc.,WMT,geographic_revenue,walmart international,277619.0,thousands,29
+Walmart Inc.,WMT,geographic_revenue,walmart u.s,698708.0,thousands,29
 Walmart Inc.,WMT,rd_expense,value,0.0,millions,71
-Walmart Inc.,WMT,segment_revenue,sam's club u.s,93.8,billions,6
 Walmart Inc.,WMT,segment_revenue,walmart international,130.4,billions,6
 Walmart Inc.,WMT,segment_revenue,walmart u.s,483.0,billions,6
 Exxon Mobil Corporation,XOM,geographic_revenue,africa,185.0,millions,11
