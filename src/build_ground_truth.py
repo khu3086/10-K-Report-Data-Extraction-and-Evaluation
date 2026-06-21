@@ -160,17 +160,38 @@ def run(companies_path: str, reports_dir: str, out_path: str,
                          "source_page": r["source_page"]})
         print(f"  +{sum(1 for x in rows if x['ticker'] == ticker) } rows total for {ticker}")
 
+    cols = ["company", "ticker", "field", "key", "value", "unit", "source_page"]
+
+    # When regenerating a subset, preserve every other company's existing rows
+    # instead of overwriting the whole file (free-tier rate limits make full
+    # rebuilds expensive). Provenance comment lines (leading '#') are dropped and
+    # re-emitted fresh.
+    # Replace at (ticker, field) granularity; a field that yielded nothing this
+    # run (XBRL missing or model failed) keeps its existing rows instead of being
+    # wiped by a partial regeneration.
+    preserved: List[dict] = []
+    if only and os.path.exists(out_path):
+        refreshed = {(r["ticker"].upper(), r["field"]) for r in rows}
+        with open(out_path, newline="") as f:
+            for r in csv.DictReader(f):
+                if (r.get("company") or "").startswith("#"):
+                    continue
+                if ((r.get("ticker") or "").upper(), r.get("field")) not in refreshed:
+                    preserved.append({k: r.get(k, "") for k in cols})
+
+    all_rows = preserved + rows
+    all_rows.sort(key=lambda r: (r["ticker"], r["field"], str(r["key"])))
     with open(out_path, "w", newline="") as f:
-        w = csv.DictWriter(
-            f, fieldnames=["company", "ticker", "field", "key", "value", "unit", "source_page"])
+        w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()
         # Provenance note (skipped by evaluate.py's '#'-prefix filter).
         w.writerow({"company": "# rd_expense = SEC XBRL (authoritative); "
                     "segment/geographic = " + GT_MODEL + " (independent silver GT)",
                     "ticker": "", "field": "", "key": "", "value": "", "unit": "",
                     "source_page": ""})
-        w.writerows(rows)
-    print(f"\nWrote {len(rows)} ground-truth rows -> {out_path}")
+        w.writerows(all_rows)
+    print(f"\nWrote {len(all_rows)} ground-truth rows -> {out_path} "
+          f"({len(rows)} regenerated, {len(preserved)} preserved)")
 
 
 def main():

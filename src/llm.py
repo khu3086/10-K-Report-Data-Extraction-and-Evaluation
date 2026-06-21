@@ -31,7 +31,11 @@ def _get_client() -> OpenAI:
         api_key = os.environ.get("OPENROUTER_API_KEY") or os.environ.get("OPENAI_API_KEY")
         if not api_key:
             raise RuntimeError("Set OPENROUTER_API_KEY (or OPENAI_API_KEY).")
-        _client = OpenAI(base_url=BASE_URL, api_key=api_key)
+        # Bounded timeout + a couple retries so a single slow/rate-limited free
+        # endpoint can't stall the whole batch (the call site treats None as skip).
+        _client = OpenAI(base_url=BASE_URL, api_key=api_key,
+                         timeout=float(os.environ.get("LLM_TIMEOUT", "90")),
+                         max_retries=int(os.environ.get("LLM_MAX_RETRIES", "2")))
     return _client
 
 

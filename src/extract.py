@@ -75,11 +75,46 @@ def _rows_for_cycles(company, ticker, fld, result, page, scale):
     return c1, c2
 
 
-def run(reports_dir: str, out_dir: str, companies_path: str) -> None:
+def _merge_existing(out_path: str, new_rows: List[dict], only: set) -> List[dict]:
+    """Combine freshly-extracted rows with the existing CSV.
+
+    Rows for tickers in `only` are replaced by `new_rows`; every other company's
+    rows are preserved as-is. This lets us re-extract one or two filings without
+    discarding the rest (important under free-tier API rate limits).
+    """
+    # Replace at (ticker, field) granularity: only the specific field that
+    # produced fresh rows is swapped in. A field that failed (e.g. rate-limited)
+    # keeps its existing rows rather than being silently wiped — so a partial
+    # success never destroys the fields that didn't come back this run.
+    refreshed = {(r["ticker"].upper(), r["field"]) for r in new_rows}
+    kept: List[dict] = []
+    if os.path.exists(out_path):
+        with open(out_path, newline="") as f:
+            for r in csv.DictReader(f):
+                if (r["ticker"].upper(), r["field"]) not in refreshed:
+                    kept.append({k: r.get(k, "") for k in FIELDNAMES})
+    refreshed_tickers = {t for t, _ in refreshed}
+    skipped = only - refreshed_tickers
+    if skipped:
+        print(f"  WARNING: no new rows for {', '.join(sorted(skipped))} — "
+              f"keeping existing rows for those.")
+    return kept + new_rows
+
+
+def run(reports_dir: str, out_dir: str, companies_path: str, only=None) -> None:
     companies = _load_companies(companies_path)
     pdfs = sorted(glob.glob(os.path.join(reports_dir, "*.pdf")))
     if not pdfs:
         raise SystemExit(f"No PDFs in {reports_dir}. Run src/edgar_fetch.py first.")
+
+    only = {t.upper() for t in only} if only else None
+    if only:
+        pdfs = [p for p in pdfs if _ticker_from_filename(p) in only]
+        missing = only - {_ticker_from_filename(p) for p in pdfs}
+        if missing:
+            raise SystemExit(f"No PDF found for: {', '.join(sorted(missing))}")
+        print(f"--only: re-extracting {', '.join(sorted(only))} "
+              f"(other companies preserved).")
 
     rows = {1: [], 2: []}
     for pdf in pdfs:
@@ -106,11 +141,16 @@ def run(reports_dir: str, out_dir: str, companies_path: str) -> None:
     os.makedirs(out_dir, exist_ok=True)
     for cycle in (1, 2):
         out_path = os.path.join(out_dir, f"extractions_cycle{cycle}.csv")
+        out_rows = _merge_existing(out_path, rows[cycle], only) if only else rows[cycle]
+        # Keep a stable, ticker-grouped order so diffs stay readable.
+        out_rows.sort(key=lambda r: (r["ticker"], r["field"], str(r["key"])))
         with open(out_path, "w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
             writer.writeheader()
-            writer.writerows(rows[cycle])
-        print(f"Wrote {len(rows[cycle])} rows -> {out_path}")
+            writer.writerows(out_rows)
+        print(f"Wrote {len(out_rows)} rows -> {out_path}"
+              f" ({len(rows[cycle])} re-extracted)" if only else
+              f"Wrote {len(out_rows)} rows -> {out_path}")
 
 
 def main():
@@ -118,10 +158,14 @@ def main():
     ap.add_argument("--reports", default=os.path.join(ROOT, "data", "reports"))
     ap.add_argument("--out", default=os.path.join(ROOT, "output"))
     ap.add_argument("--companies", default=os.path.join(ROOT, "companies.yaml"))
+    ap.add_argument("--only", default=None,
+                    help="Comma-separated tickers to re-extract; other companies "
+                         "in the existing CSVs are preserved (merge, not overwrite).")
     # Accepted for backward compatibility; extraction always emits both cycles.
     ap.add_argument("--cycle", type=int, default=None, help=argparse.SUPPRESS)
     args = ap.parse_args()
-    run(args.reports, args.out, args.companies)
+    only = [t.strip() for t in args.only.split(",")] if args.only else None
+    run(args.reports, args.out, args.companies, only=only)
 
 
 if __name__ == "__main__":
