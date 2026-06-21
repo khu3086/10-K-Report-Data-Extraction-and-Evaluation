@@ -1,68 +1,88 @@
 ticker,field,key,predicted,truth,category
-AAPL,segment_revenue,americas,100000000000.0,109200000.0,wrong_value
-AAPL,segment_revenue,europe,80000000000.0,79500000.0,wrong_value
-AAPL,segment_revenue,china,60000000000.0,69000000.0,wrong_value
-AAPL,segment_revenue,japan,30000000000.0,29000000.0,wrong_value
-AAPL,segment_revenue,rest of asia pacific,20000000000.0,28000000.0,wrong_value
-AAPL,segment_revenue,americas,100000000000.0,109200000.0,wrong_value
-AAPL,segment_revenue,europe,80000000000.0,79500000.0,wrong_value
-AAPL,segment_revenue,china,60000000000.0,69000000.0,wrong_value
-AAPL,segment_revenue,japan,30000000000.0,29000000.0,wrong_value
-AAPL,segment_revenue,rest of asia pacific,20000000000.0,28000000.0,wrong_value
-CAT,segment_revenue,construction industries,14064000000.0,24800000000.0,wrong_value
-CAT,segment_revenue,resource industries,4643000000.0,12185000000.0,wrong_value
-CAT,segment_revenue,power & energy,15558000000.0,27143000000.0,wrong_value
-CAT,segment_revenue,financial products segment,2841000000.0,4220000000.0,wrong_year_or_rounding
-CAT,segment_revenue,construction industries,14064000000.0,24800000000.0,wrong_value
-CAT,segment_revenue,resource industries,4643000000.0,12185000000.0,wrong_value
-CAT,segment_revenue,power & energy,15558000000.0,27143000000.0,wrong_value
-CAT,segment_revenue,financial products segment,2841000000.0,4220000000.0,wrong_year_or_rounding
-GOOGL,segment_revenue,google services,272543000000.0,342721000000.0,wrong_year_or_rounding
+AAPL,segment_revenue,corporate,416161000000.0,,spurious_key
+AMZN,segment_revenue,aws,128725000000.0,90757000000.0,wrong_year_or_rounding
+AMZN,segment_revenue,international,161894000000.0,131200000000.0,wrong_year_or_rounding
+AMZN,segment_revenue,north america,426305000000.0,352828000000.0,wrong_year_or_rounding
+AMZN,segment_revenue,aws,128725000000.0,90757000000.0,wrong_year_or_rounding
+AMZN,segment_revenue,international,161894000000.0,131200000000.0,wrong_year_or_rounding
+AMZN,segment_revenue,north america,426305000000.0,352828000000.0,wrong_year_or_rounding
+CAT,segment_revenue,construction industries,24080000000.0,25060000000.0,wrong_year_or_rounding
+CAT,segment_revenue,resource industries,12185000000.0,12474000000.0,wrong_value
+CAT,segment_revenue,construction industries,24080000000.0,25060000000.0,wrong_year_or_rounding
+CAT,segment_revenue,resource industries,12185000000.0,12474000000.0,wrong_value
 GOOGL,segment_revenue,google cloud,33088000000.0,58705000000.0,wrong_value
-GOOGL,segment_revenue,other bets,1527000000.0,1537000000.0,wrong_value
 GOOGL,segment_revenue,google services,272543000000.0,342721000000.0,wrong_year_or_rounding
-GOOGL,segment_revenue,google cloud,33088000000.0,58705000000.0,wrong_value
 GOOGL,segment_revenue,other bets,1527000000.0,1537000000.0,wrong_value
-KO,segment_revenue,emea,10833000000.0,11513000000.0,wrong_year_or_rounding
-KO,segment_revenue,asia pacific,5328000000.0,5638000000.0,wrong_year_or_rounding
-KO,segment_revenue,emea,10833000000.0,11513000000.0,wrong_year_or_rounding
-KO,segment_revenue,asia pacific,5328000000.0,5638000000.0,wrong_year_or_rounding
-MSFT,segment_revenue,productivity and business processes,0.0,,spurious_key
-MSFT,segment_revenue,intelligent cloud,0.0,,spurious_key
-MSFT,segment_revenue,more personal computing,0.0,,spurious_key
-WMT,segment_revenue,walmart u.s,483000000000.0,483000000000000.0,scale_x1000
-WMT,segment_revenue,walmart international,130400000000.0,130400000000000.0,scale_x1000
-WMT,segment_revenue,walmart u.s,483000000000.0,483000000000000.0,scale_x1000
-WMT,segment_revenue,walmart international,130400000000.0,130400000000000.0,scale_x1000
-XOM,segment_revenue,upstream,51389000000.0,25396000000.0,wrong_value
-XOM,segment_revenue,energy products,118497000000.0,145378000000.0,wrong_year_or_rounding
-XOM,segment_revenue,specialty products,12705000000.0,12269000000.0,wrong_year_or_rounding
-XOM,segment_revenue,upstream,51389000000.0,25396000000.0,wrong_value
-XOM,segment_revenue,chemical products,145378000000.0,14615000000.0,wrong_value
-XOM,segment_revenue,specialty products,12705000000.0,12269000000.0,wrong_year_or_rounding
-AMZN,geographic_revenue,united states,469000000.0,,spurious_key
-AMZN,geographic_revenue,international,104000000.0,,spurious_key
-CAT,geographic_revenue,united states,12345000000.0,,spurious_key
-CAT,geographic_revenue,international,67890000000.0,,spurious_key
-GOOGL,geographic_revenue,united states,,193764000000.0,missing_key
-GOOGL,geographic_revenue,emea,,117000000000.0,missing_key
-GOOGL,geographic_revenue,asia pacific,,68480000000.0,missing_key
-GOOGL,geographic_revenue,other americas,,24170000000.0,missing_key
-MSFT,geographic_revenue,united states,125000000000.0,,spurious_key
-MSFT,geographic_revenue,international,103000000000.0,,spurious_key
-NVDA,geographic_revenue,united states,12345000000.0,,spurious_key
-NVDA,geographic_revenue,international,67890000000.0,,spurious_key
-WMT,geographic_revenue,walmart u.s,779210000.0,,spurious_key
-WMT,geographic_revenue,walmart international retail,236214000.0,,spurious_key
-WMT,geographic_revenue,walmart international wholesale,41405000.0,,spurious_key
+GOOGL,segment_revenue,google cloud,33088000000.0,58705000000.0,wrong_value
+GOOGL,segment_revenue,google services,272543000000.0,342721000000.0,wrong_year_or_rounding
+GOOGL,segment_revenue,other bets,1527000000.0,1537000000.0,wrong_value
+JNJ,segment_revenue,innovative medicine,5245000.0,,spurious_key
+JNJ,segment_revenue,medtech,5118000.0,,spurious_key
+KO,segment_revenue,asia pacific,47941000000000.0,,spurious_key
+KO,segment_revenue,bottling investments,47941000000000.0,,spurious_key
+KO,segment_revenue,emea,47941000000000.0,,spurious_key
+KO,segment_revenue,latin america,47941000000000.0,,spurious_key
+KO,segment_revenue,north america,47941000000000.0,,spurious_key
+KO,segment_revenue,worldwide,47941000000000.0,,spurious_key
+MSFT,segment_revenue,basic (a/b,13700000.0,,spurious_key
+MSFT,segment_revenue,dilutive effect of stock-based awards,32000000.0,,spurious_key
+MSFT,segment_revenue,interest and dividends income,2647000000.0,,spurious_key
+MSFT,segment_revenue,net gains (losses) on foreign currency remeasurements,171000000.0,,spurious_key
+MSFT,segment_revenue,net income available for common shareholders (a,101832000000.0,,spurious_key
+MSFT,segment_revenue,net recognized gains (losses) on investments,-349000000.0,,spurious_key
+WMT,segment_revenue,sam's club u.s,93800000000.0,,spurious_key
+XOM,segment_revenue,chemical products,173119000000.0,,spurious_key
+XOM,segment_revenue,energy products,452209000000.0,,spurious_key
+XOM,segment_revenue,specialty products,118497000000.0,,spurious_key
+XOM,segment_revenue,upstream,323820000000.0,,spurious_key
+AMZN,geographic_revenue,aws,107556000000.0,128725000000.0,wrong_year_or_rounding
+AMZN,geographic_revenue,international,142906000000.0,161894000000.0,wrong_year_or_rounding
+AMZN,geographic_revenue,north america,387497000000.0,426305000000.0,wrong_year_or_rounding
+AMZN,geographic_revenue,aws,107556000000.0,128725000000.0,wrong_year_or_rounding
+AMZN,geographic_revenue,international,142906000000.0,161894000000.0,wrong_year_or_rounding
+AMZN,geographic_revenue,north america,387497000000.0,426305000000.0,wrong_year_or_rounding
+CAT,geographic_revenue,america,2358000000.0,,spurious_key
+CAT,geographic_revenue,asia/pacific,3783000000.0,11199000000.0,wrong_value
+CAT,geographic_revenue,eame,4595000000.0,12793000000.0,wrong_value
+CAT,geographic_revenue,external,67348000000.0,,spurious_key
+CAT,geographic_revenue,latin,2358000000.0,,spurious_key
+CAT,geographic_revenue,latin america,2358000000.0,6988000000.0,wrong_value
+CAT,geographic_revenue,north,24180000000.0,,spurious_key
+CAT,geographic_revenue,north america,24180000000.0,36609000000.0,wrong_year_or_rounding
+CAT,geographic_revenue,asia/pacific,3783000000.0,11199000000.0,wrong_value
+CAT,geographic_revenue,eame,4595000000.0,12793000000.0,wrong_value
+CAT,geographic_revenue,latin america,2358000000.0,6988000000.0,wrong_value
+CAT,geographic_revenue,north america,24180000000.0,36609000000.0,wrong_year_or_rounding
+GOOGL,geographic_revenue,asia pacific,16000000.0,,spurious_key
+GOOGL,geographic_revenue,emea,29000000.0,,spurious_key
+GOOGL,geographic_revenue,hedging gains (losses,0.0,,spurious_key
+GOOGL,geographic_revenue,other americas,6000000.0,,spurious_key
+GOOGL,geographic_revenue,united states,49000000.0,,spurious_key
+JNJ,geographic_revenue,"africa, asia and pacific",1237000.0,,spurious_key
+JNJ,geographic_revenue,europe,5035000.0,,spurious_key
+JNJ,geographic_revenue,united states,3037000.0,,spurious_key
+JNJ,geographic_revenue,"western hemisphere, excluding u.s",1054000.0,,spurious_key
+KO,geographic_revenue,buildings and improvements,4967000000.0,,spurious_key
+KO,geographic_revenue,finished goods,1375000000.0,,spurious_key
+KO,geographic_revenue,land,265000000.0,,spurious_key
+KO,geographic_revenue,machinery and equipment,13500000000.0,,spurious_key
+KO,geographic_revenue,other,342000000.0,,spurious_key
+KO,geographic_revenue,"property, plant and equipment — cost",18732000000.0,,spurious_key
+KO,geographic_revenue,"property, plant and equipment — net",9613000000.0,,spurious_key
+KO,geographic_revenue,raw materials and packaging,2708000000.0,,spurious_key
+WMT,geographic_revenue,international distribution facilities,179000.0,,spurious_key
+WMT,geographic_revenue,sam's club u.s. retail units,464000.0,,spurious_key
+WMT,geographic_revenue,u.s. distribution facilities,192000.0,,spurious_key
+WMT,geographic_revenue,walmart international retail units,1486000.0,,spurious_key
+WMT,geographic_revenue,walmart u.s. retail units,3728000.0,,spurious_key
+XOM,geographic_revenue,africa,0.0,,spurious_key
+XOM,geographic_revenue,asia,163000000.0,,spurious_key
+XOM,geographic_revenue,australia/oceania,28000000.0,,spurious_key
+XOM,geographic_revenue,canada/other americas,609000000.0,,spurious_key
+XOM,geographic_revenue,europe,3000000.0,,spurious_key
 XOM,geographic_revenue,united states,0.0,,spurious_key
-XOM,geographic_revenue,international,0.0,,spurious_key
-AMZN,rd_expense,value,817000000.0,,spurious_key
-JNJ,rd_expense,value,1250000000.0,14665000000.0,wrong_value
-JNJ,rd_expense,value,1250000000.0,14665000000.0,wrong_value
-KO,rd_expense,value,0.0,,spurious_key
-MSFT,rd_expense,value,0.0,32488000000.0,wrong_value
-MSFT,rd_expense,value,0.0,32488000000.0,wrong_value
+AMZN,rd_expense,value,0.0,,spurious_key
+CAT,rd_expense,value,,2148000000.0,missing_key
+JNJ,rd_expense,value,13400000000.0,14665000000.0,wrong_year_or_rounding
+JNJ,rd_expense,value,13400000000.0,14665000000.0,wrong_year_or_rounding
 WMT,rd_expense,value,0.0,,spurious_key
-XOM,rd_expense,value,1200000000000.0,1200000000.0,scale_x1000
-XOM,rd_expense,value,1200000000000.0,1200000000.0,scale_x1000

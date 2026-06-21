@@ -6,17 +6,17 @@
     "recall": 0.0,
     "f1": 0.0,
     "tp": 0,
-    "fp": 63,
-    "fn": 46
+    "fp": 114,
+    "fn": 42
   },
   "per_field": {
     "segment_revenue": {
       "shape": "keyed",
-      "truth_cells": 28,
-      "predicted_cells": 32,
+      "truth_cells": 19,
+      "predicted_cells": 42,
       "tp": 0,
-      "fp": 32,
-      "fn": 28,
+      "fp": 42,
+      "fn": 19,
       "precision": 0.0,
       "recall": 0.0,
       "f1": 0.0,
@@ -25,11 +25,11 @@
     },
     "geographic_revenue": {
       "shape": "keyed",
-      "truth_cells": 11,
-      "predicted_cells": 21,
+      "truth_cells": 16,
+      "predicted_cells": 64,
       "tp": 0,
-      "fp": 21,
-      "fn": 11,
+      "fp": 64,
+      "fn": 16,
       "precision": 0.0,
       "recall": 0.0,
       "f1": 0.0,
@@ -39,9 +39,9 @@
     "rd_expense": {
       "shape": "scalar",
       "truth_cells": 7,
-      "predicted_cells": 10,
+      "predicted_cells": 8,
       "tp": 0,
-      "fp": 10,
+      "fp": 8,
       "fn": 7,
       "precision": 0.0,
       "recall": 0.0,
@@ -51,10 +51,9 @@
     }
   },
   "error_categories": {
-    "wrong_value": 44,
-    "scale_x1e6": 32,
-    "spurious_key": 21,
-    "scale_x1000": 8,
-    "missing_key": 4
+    "spurious_key": 74,
+    "scale_x1e6": 44,
+    "wrong_value": 36,
+    "missing_key": 2
   }
 }

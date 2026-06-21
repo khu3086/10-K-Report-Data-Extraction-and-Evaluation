@@ -1,62 +1,113 @@
 company,ticker,field,key,value,unit,source_page
-Apple Inc.,AAPL,segment_revenue,americas,100000000000.0,actual,5
-Apple Inc.,AAPL,segment_revenue,europe,80000000000.0,actual,5
-Apple Inc.,AAPL,segment_revenue,china,60000000000.0,actual,5
-Apple Inc.,AAPL,segment_revenue,japan,30000000000.0,actual,5
-Apple Inc.,AAPL,segment_revenue,rest of asia pacific,20000000000.0,actual,5
-Apple Inc.,AAPL,geographic_revenue,united states,151790000000.0,actual,50
 Apple Inc.,AAPL,geographic_revenue,china,64377000000.0,actual,50
 Apple Inc.,AAPL,geographic_revenue,other countries,199994000000.0,actual,50
+Apple Inc.,AAPL,geographic_revenue,united states,151790000000.0,actual,50
 Apple Inc.,AAPL,rd_expense,value,34550000000.0,actual,50
-Amazon.com Inc.,AMZN,segment_revenue,north america,426305000000.0,actual,71
-Amazon.com Inc.,AMZN,segment_revenue,international,161894000000.0,actual,71
+Apple Inc.,AAPL,segment_revenue,americas,178353000000.0,actual,50
+Apple Inc.,AAPL,segment_revenue,china,64377000000.0,actual,50
+Apple Inc.,AAPL,segment_revenue,corporate,416161000000.0,actual,50
+Apple Inc.,AAPL,segment_revenue,europe,111032000000.0,actual,50
+Apple Inc.,AAPL,segment_revenue,japan,28703000000.0,actual,50
+Apple Inc.,AAPL,segment_revenue,rest of asia pacific,33696000000.0,actual,50
+Amazon.com Inc.,AMZN,geographic_revenue,aws,107556000000.0,actual,25
+Amazon.com Inc.,AMZN,geographic_revenue,international,142906000000.0,actual,25
+Amazon.com Inc.,AMZN,geographic_revenue,north america,387497000000.0,actual,25
+Amazon.com Inc.,AMZN,rd_expense,value,0.0,actual,60
 Amazon.com Inc.,AMZN,segment_revenue,aws,128725000000.0,actual,71
-Amazon.com Inc.,AMZN,geographic_revenue,united states,469000000.0,actual,7
-Amazon.com Inc.,AMZN,geographic_revenue,international,104000000.0,actual,7
-Amazon.com Inc.,AMZN,rd_expense,value,817000000.0,actual,60
-Caterpillar Inc.,CAT,segment_revenue,construction industries,14064000000.0,actual,124
-Caterpillar Inc.,CAT,segment_revenue,resource industries,4643000000.0,actual,124
-Caterpillar Inc.,CAT,segment_revenue,power & energy,15558000000.0,actual,124
-Caterpillar Inc.,CAT,segment_revenue,financial products segment,2841000000.0,actual,124
-Caterpillar Inc.,CAT,geographic_revenue,united states,12345000000.0,actual,40
-Caterpillar Inc.,CAT,geographic_revenue,international,67890000000.0,actual,40
-Caterpillar Inc.,CAT,rd_expense,value,2148000000.0,actual,54
-Alphabet Inc.,GOOGL,segment_revenue,google services,272543000000.0,actual,88
-Alphabet Inc.,GOOGL,segment_revenue,google cloud,33088000000.0,actual,88
-Alphabet Inc.,GOOGL,segment_revenue,other bets,1527000000.0,actual,88
+Amazon.com Inc.,AMZN,segment_revenue,international,161894000000.0,actual,71
+Amazon.com Inc.,AMZN,segment_revenue,north america,426305000000.0,actual,71
+Caterpillar Inc.,CAT,geographic_revenue,america,24180000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,america,2358000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,asia/pacific,3783000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,asia/pacific,3783000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,eame,4595000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,eame,4595000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,external,67348000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,external,67348000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,latin,2358000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,latin america,2358000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,north,24180000000.0,actual,124
+Caterpillar Inc.,CAT,geographic_revenue,north america,24180000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,construction industries,24080000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,financial products segment,4220000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,power & energy,32201000000.0,actual,124
+Caterpillar Inc.,CAT,segment_revenue,resource industries,12185000000.0,actual,124
+Alphabet Inc.,GOOGL,geographic_revenue,asia pacific,16000000.0,actual,35
+Alphabet Inc.,GOOGL,geographic_revenue,emea,29000000.0,actual,35
+Alphabet Inc.,GOOGL,geographic_revenue,hedging gains (losses,0.0,actual,35
+Alphabet Inc.,GOOGL,geographic_revenue,other americas,6000000.0,actual,35
+Alphabet Inc.,GOOGL,geographic_revenue,united states,49000000.0,actual,35
 Alphabet Inc.,GOOGL,rd_expense,value,61087000000.0,actual,36
-Johnson & Johnson,JNJ,geographic_revenue,united states,3037000.0,actual,26
-Johnson & Johnson,JNJ,geographic_revenue,europe,5035000.0,actual,26
-Johnson & Johnson,JNJ,geographic_revenue,"western hemisphere, excluding u.s",1054000.0,actual,26
+Alphabet Inc.,GOOGL,segment_revenue,google cloud,33088000000.0,actual,88
+Alphabet Inc.,GOOGL,segment_revenue,google services,272543000000.0,actual,88
+Alphabet Inc.,GOOGL,segment_revenue,other bets,1527000000.0,actual,88
 Johnson & Johnson,JNJ,geographic_revenue,"africa, asia and pacific",1237000.0,actual,26
-Johnson & Johnson,JNJ,rd_expense,value,1250000000.0,actual,61
-The Coca-Cola Company,KO,segment_revenue,emea,10833000000.0,actual,120
-The Coca-Cola Company,KO,segment_revenue,latin america,6331000000.0,actual,120
-The Coca-Cola Company,KO,segment_revenue,north america,19579000000.0,actual,120
-The Coca-Cola Company,KO,segment_revenue,asia pacific,5328000000.0,actual,120
-The Coca-Cola Company,KO,segment_revenue,bottling investments,5726000000.0,actual,120
-The Coca-Cola Company,KO,rd_expense,value,0.0,actual,26
-Microsoft Corporation,MSFT,segment_revenue,productivity and business processes,0.0,actual,5
-Microsoft Corporation,MSFT,segment_revenue,intelligent cloud,0.0,actual,5
-Microsoft Corporation,MSFT,segment_revenue,more personal computing,0.0,actual,5
-Microsoft Corporation,MSFT,geographic_revenue,united states,125000000000.0,actual,10
-Microsoft Corporation,MSFT,geographic_revenue,international,103000000000.0,actual,10
-Microsoft Corporation,MSFT,rd_expense,value,0.0,actual,58
+Johnson & Johnson,JNJ,geographic_revenue,europe,5035000.0,actual,26
+Johnson & Johnson,JNJ,geographic_revenue,united states,3037000.0,actual,26
+Johnson & Johnson,JNJ,geographic_revenue,"western hemisphere, excluding u.s",1054000.0,actual,26
+Johnson & Johnson,JNJ,rd_expense,value,13400000000.0,actual,61
+Johnson & Johnson,JNJ,segment_revenue,innovative medicine,5245000.0,actual,26
+Johnson & Johnson,JNJ,segment_revenue,medtech,5118000.0,actual,26
+The Coca-Cola Company,KO,geographic_revenue,buildings and improvements,4967000000.0,actual,73
+The Coca-Cola Company,KO,geographic_revenue,finished goods,1375000000.0,actual,73
+The Coca-Cola Company,KO,geographic_revenue,land,265000000.0,actual,73
+The Coca-Cola Company,KO,geographic_revenue,machinery and equipment,13500000000.0,actual,73
+The Coca-Cola Company,KO,geographic_revenue,other,342000000.0,actual,73
+The Coca-Cola Company,KO,geographic_revenue,"property, plant and equipment — cost",18732000000.0,actual,73
+The Coca-Cola Company,KO,geographic_revenue,"property, plant and equipment — net",9613000000.0,actual,73
+The Coca-Cola Company,KO,geographic_revenue,raw materials and packaging,2708000000.0,actual,73
+The Coca-Cola Company,KO,segment_revenue,asia pacific,47941000000000.0,actual,48
+The Coca-Cola Company,KO,segment_revenue,bottling investments,47941000000000.0,actual,48
+The Coca-Cola Company,KO,segment_revenue,emea,47941000000000.0,actual,48
+The Coca-Cola Company,KO,segment_revenue,latin america,47941000000000.0,actual,48
+The Coca-Cola Company,KO,segment_revenue,north america,47941000000000.0,actual,48
+The Coca-Cola Company,KO,segment_revenue,worldwide,47941000000000.0,actual,48
+Microsoft Corporation,MSFT,geographic_revenue,other countries,137178000000.0,actual,84
+Microsoft Corporation,MSFT,geographic_revenue,united states,144546000000.0,actual,84
+Microsoft Corporation,MSFT,rd_expense,value,32488000000.0,actual,40
+Microsoft Corporation,MSFT,segment_revenue,basic (a/b,13700000.0,actual,61
+Microsoft Corporation,MSFT,segment_revenue,dilutive effect of stock-based awards,32000000.0,actual,61
+Microsoft Corporation,MSFT,segment_revenue,interest and dividends income,2647000000.0,actual,61
+Microsoft Corporation,MSFT,segment_revenue,net gains (losses) on foreign currency remeasurements,171000000.0,actual,61
+Microsoft Corporation,MSFT,segment_revenue,net income available for common shareholders (a,101832000000.0,actual,61
+Microsoft Corporation,MSFT,segment_revenue,net recognized gains (losses) on investments,-349000000.0,actual,61
+NVIDIA Corporation,NVDA,geographic_revenue,china (including hong kong,19677000000.0,actual,78
+NVIDIA Corporation,NVDA,geographic_revenue,other,4299000000.0,actual,78
+NVIDIA Corporation,NVDA,geographic_revenue,taiwan,42345000000.0,actual,78
+NVIDIA Corporation,NVDA,geographic_revenue,united states,149617000000.0,actual,78
+NVIDIA Corporation,NVDA,rd_expense,value,18497000000.0,actual,41
 NVIDIA Corporation,NVDA,segment_revenue,compute & networking,193479000000.0,actual,40
 NVIDIA Corporation,NVDA,segment_revenue,graphics,22459000000.0,actual,40
-NVIDIA Corporation,NVDA,geographic_revenue,united states,12345000000.0,actual,21
-NVIDIA Corporation,NVDA,geographic_revenue,international,67890000000.0,actual,21
-NVIDIA Corporation,NVDA,rd_expense,value,18497000000.0,actual,41
-Walmart Inc.,WMT,segment_revenue,walmart u.s,483000000000.0,actual,6
-Walmart Inc.,WMT,segment_revenue,walmart international,130400000000.0,actual,6
-Walmart Inc.,WMT,geographic_revenue,walmart u.s,779210000.0,actual,29
-Walmart Inc.,WMT,geographic_revenue,walmart international retail,236214000.0,actual,29
-Walmart Inc.,WMT,geographic_revenue,walmart international wholesale,41405000.0,actual,29
+Walmart Inc.,WMT,geographic_revenue,international distribution facilities,179000.0,actual,29
+Walmart Inc.,WMT,geographic_revenue,sam's club u.s. retail units,464000.0,actual,29
+Walmart Inc.,WMT,geographic_revenue,u.s. distribution facilities,192000.0,actual,29
+Walmart Inc.,WMT,geographic_revenue,walmart international retail units,1486000.0,actual,29
+Walmart Inc.,WMT,geographic_revenue,walmart u.s. retail units,3728000.0,actual,29
 Walmart Inc.,WMT,rd_expense,value,0.0,actual,71
-Exxon Mobil Corporation,XOM,segment_revenue,upstream,51389000000.0,actual,90
-Exxon Mobil Corporation,XOM,segment_revenue,energy products,118497000000.0,actual,90
-Exxon Mobil Corporation,XOM,segment_revenue,chemical products,145378000000.0,actual,90
-Exxon Mobil Corporation,XOM,segment_revenue,specialty products,12705000000.0,actual,90
-Exxon Mobil Corporation,XOM,geographic_revenue,united states,0.0,actual,72
-Exxon Mobil Corporation,XOM,geographic_revenue,international,0.0,actual,72
-Exxon Mobil Corporation,XOM,rd_expense,value,1200000000000.0,actual,115
+Walmart Inc.,WMT,segment_revenue,sam's club u.s,93800000000.0,actual,6
+Walmart Inc.,WMT,segment_revenue,walmart international,130400000000.0,actual,6
+Walmart Inc.,WMT,segment_revenue,walmart u.s,483000000000.0,actual,6
+Exxon Mobil Corporation,XOM,geographic_revenue,africa,185000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,africa,7000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,africa,32000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,africa,0.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,asia,1871000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,asia,462000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,asia,1089000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,asia,163000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,australia/oceania,32000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,australia/oceania,28000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,canada/other americas,586000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,canada/other americas,609000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,europe,3000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,europe,2000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,europe,3000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,united states,1552000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,united states,5000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,united states,1558000000.0,actual,11
+Exxon Mobil Corporation,XOM,geographic_revenue,united states,0.0,actual,11
+Exxon Mobil Corporation,XOM,rd_expense,value,1200000000.0,actual,115
+Exxon Mobil Corporation,XOM,segment_revenue,chemical products,173119000000.0,actual,90
+Exxon Mobil Corporation,XOM,segment_revenue,energy products,452209000000.0,actual,90
+Exxon Mobil Corporation,XOM,segment_revenue,specialty products,118497000000.0,actual,90
+Exxon Mobil Corporation,XOM,segment_revenue,upstream,323820000000.0,actual,90
