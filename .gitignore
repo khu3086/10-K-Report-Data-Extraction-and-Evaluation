@@ -1,0 +1,16 @@
+# Large input PDFs (regenerate via src/edgar_fetch.py)
+data/reports/*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Cache
+.cache/
+*.egg-info/
+
+# OS
+.DS_Store

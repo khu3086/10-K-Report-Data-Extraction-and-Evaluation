@@ -1,0 +1,49 @@
+# Ten public companies across diverse sectors. Diversity is deliberate: it
+# forces the extractor to handle different segment names, geographic groupings,
+# and table layouts — which is where the "interesting errors" come from.
+#
+# `cik` is the SEC Central Index Key (no leading zeros needed here; the fetcher
+# zero-pads to 10 digits). `fiscal_year` is the 10-K fiscal year we target for
+# ground truth; the fetcher pulls the most recent 10-K by default.
+
+companies:
+  - ticker: AAPL
+    name: Apple Inc.
+    cik: 320193
+    fiscal_year: 2023
+  - ticker: MSFT
+    name: Microsoft Corporation
+    cik: 789019
+    fiscal_year: 2023
+  - ticker: GOOGL
+    name: Alphabet Inc.
+    cik: 1652044
+    fiscal_year: 2023
+  - ticker: AMZN
+    name: Amazon.com Inc.
+    cik: 1018724
+    fiscal_year: 2023
+  - ticker: NVDA
+    name: NVIDIA Corporation
+    cik: 1045810
+    fiscal_year: 2024
+  - ticker: KO
+    name: The Coca-Cola Company
+    cik: 21344
+    fiscal_year: 2023
+  - ticker: JNJ
+    name: Johnson & Johnson
+    cik: 200406
+    fiscal_year: 2023
+  - ticker: WMT
+    name: Walmart Inc.
+    cik: 104169
+    fiscal_year: 2024
+  - ticker: XOM
+    name: Exxon Mobil Corporation
+    cik: 34088
+    fiscal_year: 2023
+  - ticker: CAT
+    name: Caterpillar Inc.
+    cik: 18230
+    fiscal_year: 2023

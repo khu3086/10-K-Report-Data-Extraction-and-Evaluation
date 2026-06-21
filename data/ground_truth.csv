@@ -1,0 +1,12 @@
+company,ticker,field,key,value,unit,source_page
+# Fill in manually-verified values, one row per (ticker, field, key).
+# - value MUST be in ACTUAL DOLLARS (e.g. 383285000000, not "383,285").
+# - For rd_expense (scalar) use key "value".
+# - For segment_revenue / geographic_revenue use one row per segment/region,
+#   with key normalized the same way the extractor does (lowercase; see
+#   fields.normalize_name — e.g. "United States" -> "united states").
+# - source_page is optional but useful for auditing.
+# Example rows (replace with real, verified figures from the filings):
+# Apple Inc.,AAPL,rd_expense,value,29915000000,actual,
+# Apple Inc.,AAPL,geographic_revenue,americas,162560000000,actual,
+# Apple Inc.,AAPL,geographic_revenue,europe,94294000000,actual,
