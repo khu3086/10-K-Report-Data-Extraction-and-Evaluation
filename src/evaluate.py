@@ -73,55 +73,81 @@ def _classify(pred: float, truth: float) -> str:
     return "wrong_value"
 
 
+def _group(cells: Dict[Cell, float]) -> Dict[tuple, Dict[str, float]]:
+    """Group (ticker, field, key)->value into {(ticker, field): {key: value}}."""
+    g: Dict[tuple, Dict[str, float]] = defaultdict(dict)
+    for (ticker, field, key), v in cells.items():
+        g[(ticker, field)][key] = v
+    return g
+
+
 def evaluate(pred_path: str, truth_path: str, out_dir: str, cycle: int) -> dict:
     preds = _load(pred_path)
     truth = _load(truth_path)
+    pg, tg = _group(preds), _group(truth)
 
     per_field: Dict[str, dict] = {}
     errors: List[dict] = []
 
     for fkey, fld in FIELDS_BY_KEY.items():
-        t_cells = {c: v for c, v in truth.items() if c[1] == fkey}
-        p_cells = {c: v for c, v in preds.items() if c[1] == fkey}
+        tickers = sorted(
+            {t for (t, f) in tg if f == fkey} | {t for (t, f) in pg if f == fkey})
 
         tp = fp = fn = 0
         ape_sum = 0.0
         ape_n = 0
 
-        # True positives / false positives over predicted cells
-        for cell, pv in p_cells.items():
-            if cell in t_cells:
-                tv = t_cells[cell]
-                if _close(pv, tv):
-                    tp += 1
-                    ape_sum += abs(pv - tv) / abs(tv) if tv else 0
-                    ape_n += 1
-                else:
-                    fp += 1
-                    errors.append({
-                        "ticker": cell[0], "field": fkey, "key": cell[2],
-                        "predicted": pv, "truth": tv,
-                        "category": _classify(pv, tv),
-                    })
-            else:
-                fp += 1
-                errors.append({
-                    "ticker": cell[0], "field": fkey, "key": cell[2],
-                    "predicted": pv, "truth": "",
-                    "category": "spurious_key",
-                })
+        # Per-company bipartite matching. A prediction is a true positive if it
+        # matches a truth cell by exact (normalized) key OR, failing that, by
+        # value within tolerance — so a correct number with a name variant
+        # ("greater china" vs "china") still counts. Wrong values and spurious
+        # keys are false positives; unmatched truth cells are false negatives.
+        for ticker in tickers:
+            t_items = dict(tg.get((ticker, fkey), {}))
+            p_items = dict(pg.get((ticker, fkey), {}))
+            matched_t: set = set()
+            used_p: set = set()
 
-        # False negatives: truth cells we never matched
-        for cell, tv in t_cells.items():
-            pv = p_cells.get(cell)
-            if pv is None or not _close(pv, tv):
-                fn += 1
-                if pv is None:
-                    errors.append({
-                        "ticker": cell[0], "field": fkey, "key": cell[2],
-                        "predicted": "", "truth": tv,
-                        "category": "missing_key",
-                    })
+            # Pass 1: exact-key correct matches
+            for pk, pv in p_items.items():
+                if pk in t_items and _close(pv, t_items[pk]):
+                    tp += 1
+                    used_p.add(pk)
+                    matched_t.add(pk)
+                    ape_sum += abs(pv - t_items[pk]) / abs(t_items[pk]) if t_items[pk] else 0
+                    ape_n += 1
+
+            # Pass 2: value-based matches (name variants)
+            for pk, pv in p_items.items():
+                if pk in used_p:
+                    continue
+                cand = next((tk for tk, tv in t_items.items()
+                             if tk not in matched_t and _close(pv, tv)), None)
+                if cand is not None:
+                    tp += 1
+                    used_p.add(pk)
+                    matched_t.add(cand)
+                    ape_sum += abs(pv - t_items[cand]) / abs(t_items[cand]) if t_items[cand] else 0
+                    ape_n += 1
+
+            # Remaining predictions -> false positives
+            for pk, pv in p_items.items():
+                if pk in used_p:
+                    continue
+                fp += 1
+                cat = _classify(pv, t_items[pk]) if pk in t_items else "spurious_key"
+                errors.append({"ticker": ticker, "field": fkey, "key": pk,
+                               "predicted": pv, "truth": t_items.get(pk, ""),
+                               "category": cat})
+
+            # Unmatched truth cells -> false negatives
+            for tk, tv in t_items.items():
+                if tk not in matched_t:
+                    fn += 1
+                    cat = _classify(p_items[tk], tv) if tk in p_items else "missing_key"
+                    errors.append({"ticker": ticker, "field": fkey, "key": tk,
+                                   "predicted": p_items.get(tk, ""), "truth": tv,
+                                   "category": cat})
 
         precision = tp / (tp + fp) if (tp + fp) else 0.0
         recall = tp / (tp + fn) if (tp + fn) else 0.0
@@ -130,8 +156,8 @@ def evaluate(pred_path: str, truth_path: str, out_dir: str, cycle: int) -> dict:
 
         per_field[fkey] = {
             "shape": fld.shape,
-            "truth_cells": len(t_cells),
-            "predicted_cells": len(p_cells),
+            "truth_cells": sum(1 for (t, f) in tg if f == fkey for _ in tg[(t, f)]),
+            "predicted_cells": sum(1 for (t, f) in pg if f == fkey for _ in pg[(t, f)]),
             "tp": tp, "fp": fp, "fn": fn,
             "precision": round(precision, 4),
             "recall": round(recall, 4),

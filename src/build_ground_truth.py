@@ -28,7 +28,8 @@ from typing import List, Optional
 import requests
 import yaml
 
-from fields import FIELDS_BY_KEY, CYCLE_HINTS, normalize_name, scale_factor
+from fields import (FIELDS_BY_KEY, EXTRACT_HINT, normalize_name, apply_scale,
+                    is_total_key, detect_scale)
 from parse import parse_pdf
 from locate import locate
 from llm import extract_field
@@ -109,17 +110,20 @@ def seg_geo_from_model(pdf_path: str) -> List[dict]:
         region = locate(fld, pages)
         if region is None:
             continue
-        res = extract_field(fld, region.context, CYCLE_HINTS[2], model=GT_MODEL)
+        res = extract_field(fld, region.context, EXTRACT_HINT, model=GT_MODEL)
         if res is None:
             continue
-        factor = scale_factor(res.detected_scale)
+        scale = detect_scale(region.context) or res.detected_scale  # same as cycle 2
         for item in res.items:
             if item.value is None:
                 continue
+            key = normalize_name(item.key)
+            if is_total_key(key):  # mirror cycle-2 post-processing
+                continue
             out.append({
                 "field": fkey,
-                "key": normalize_name(item.key),
-                "value": item.value * factor,
+                "key": key,
+                "value": apply_scale(item.value, scale),
                 "source_page": region.page_number,
             })
     return out
