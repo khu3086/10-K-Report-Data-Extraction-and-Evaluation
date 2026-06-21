@@ -15,7 +15,7 @@ import os
 from typing import List, Optional
 
 from openai import OpenAI
-from pydantic import BaseModel, Field as PydField
+from pydantic import BaseModel, Field as PydField, field_validator
 
 from fields import Field
 
@@ -50,13 +50,43 @@ class Item(BaseModel):
     # extraction; null items are filtered out downstream.
     value: Optional[float] = PydField(default=None, description="Amount in actual US dollars")
 
+    @field_validator("value", mode="before")
+    @classmethod
+    def _coerce_number(cls, v):
+        """Accept the formatted numbers models love to emit: "36,609", "$1,200",
+        "(123)" (negative), "—"/"N/A" (missing). Returning None drops just that
+        item instead of failing the entire extraction.
+        """
+        if v is None or isinstance(v, (int, float)):
+            return v
+        s = str(v).strip().replace(",", "").replace("$", "").replace("%", "")
+        if s in ("", "-", "—", "–", "N/A", "n/a", "null", "None", "nm", "NM"):
+            return None
+        neg = s.startswith("(") and s.endswith(")")
+        s = s.strip("()")
+        try:
+            return -float(s) if neg else float(s)
+        except ValueError:
+            return None
+
 
 class Extraction(BaseModel):
-    detected_scale: str = PydField(
+    # Optional + default: some models emit `null` here when no scale is printed.
+    # We never trust this for math anyway (callers prefer deterministic
+    # detect_scale), so a missing/null value must not throw away the whole
+    # extraction — it just falls back to "units".
+    detected_scale: Optional[str] = PydField(
+        default="units",
         description="The scale stated in the source table: 'millions', "
-        "'thousands', or 'units' if none."
+        "'thousands', or 'units' if none.",
     )
-    items: List[Item] = PydField(description="One entry per extracted value")
+    items: List[Item] = PydField(default_factory=list,
+                                 description="One entry per extracted value")
+
+    @field_validator("detected_scale", mode="before")
+    @classmethod
+    def _default_scale(cls, v):
+        return v if v else "units"
 
 
 SYSTEM = (

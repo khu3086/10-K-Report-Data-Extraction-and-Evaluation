@@ -33,11 +33,16 @@ FIELDS: List[Field] = [
         label="Segment revenue",
         shape="keyed",
         anchors=[
-            "reportable segments",
-            "operating segments",
+            # Singular forms also match the plural (substring), and match the
+            # table heading "net sales by reportable segment" that the prior
+            # plural-only anchors missed (Apple's Notes table).
+            "reportable segment",
+            "operating segment",
             "segment information",
             "information by segment",
-            "results of operations by segment",
+            "net sales by segment",
+            "net sales by reportable segment",
+            "segment operating performance",
         ],
         description=(
             "Revenue (net sales) for each reportable operating segment for the "
